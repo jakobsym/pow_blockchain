@@ -1,6 +1,6 @@
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-/* Takes String as user input, and converts into a SHA-256 hash */
+/* Takes String as user input, and converts into  SHA-256 hash */
 public class StringUtil {
     /* Applies SHA256 to a string and returns its result */
     public static String applySha256(String input){
