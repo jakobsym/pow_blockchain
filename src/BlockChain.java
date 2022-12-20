@@ -17,16 +17,7 @@ public class BlockChain {
 
 
 
-
-
-
-
-
-
-
-
-
-
+        /*
         Block genesisBlock = new Block("1st block", "0");
         System.out.println("Block 1 hash: " + genesisBlock.hash);
 
@@ -36,6 +27,7 @@ public class BlockChain {
 
         Block thirdBlock = new Block("3rd block", secondBlock.hash);
         System.out.println("Block 3 hash: " + thirdBlock.hash);
+         */
 
 
     }
