@@ -28,6 +28,7 @@ public class Block {
        Method completes this by, checking (calculated hash == actual hash)
     *  */
     public static Boolean isChainValid(){
+    // NEED TO PUSH ON WIFI
 
     }
 
