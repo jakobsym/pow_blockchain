@@ -15,20 +15,36 @@ public class BlockChain {
         String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
         System.out.println(blockchainJson);
 
+    }
 
+    /* Boolean isChainValid()
+       - Ensures previous hash, is the correct hash
+       - E.G: Checks all blocks in blockchain, and compares hashes.
+       Method completes this by, checking (calculated hash == actual hash)
+       - Any changes made to a block == return false
+    *  */
+    public static Boolean isChainValid(){
+        Block currentBlock;
+        Block prevBlock;
 
-        /*
-        Block genesisBlock = new Block("1st block", "0");
-        System.out.println("Block 1 hash: " + genesisBlock.hash);
+        // Check through all hashes; starting at block after Genesis block
+        for(int i = 1; i < blockchain.size(); ++i){
 
-        Block secondBlock = new Block("2nd block", genesisBlock.hash);
-        System.out.println("Block 2 hash: " + secondBlock.hash);
+            currentBlock = blockchain.get(i);
+            prevBlock = blockchain.get(i-1);
 
+            // Compare registered hash & calculated hash
+            if(!currentBlock.hash.equals(currentBlock.calculateHash()) ){
+                System.out.println("Current hashes not equal");
+                return false;
+            }
 
-        Block thirdBlock = new Block("3rd block", secondBlock.hash);
-        System.out.println("Block 3 hash: " + thirdBlock.hash);
-         */
+            if(!prevBlock.hash.equals(currentBlock.previousHash)){
+                System.out.println("Previous hash not equal");
+                return false;
+            }
 
-
+        }
+        return true;
     }
 }

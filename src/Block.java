@@ -22,15 +22,4 @@ public class Block {
 
         return StringUtil.applySha256(previousHash + timeStamp + data);
     }
-    /* Boolean isChainValid()
-       - Ensures previous hash, is the correct hash
-       - E.G: Checks all blocks in blockchain, and compares hashes.
-       Method completes this by, checking (calculated hash == actual hash)
-    *  */
-    public static Boolean isChainValid(){
-    // NEED TO PUSH ON WIFI
-
-    }
-
-
 }
