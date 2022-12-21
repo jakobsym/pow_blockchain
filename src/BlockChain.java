@@ -19,10 +19,10 @@ public class BlockChain {
 
     /* Boolean isChainValid()
        - Ensures previous hash, is the correct hash
-       - E.G: Checks all blocks in blockchain, and compares hashes.
-       Method completes this by, checking (calculated hash == actual hash)
-       - Any changes made to a block == return false
-    *  */
+       - Checks all blocks in blockchain, and compares hashes.
+       - Method completes this by, checking (hash variable == calculated hash) && (previousHash variable == prev hash)
+       - Any changes made to blockchain's block == return false;
+      */
     public static Boolean isChainValid(){
         Block currentBlock;
         Block prevBlock;
