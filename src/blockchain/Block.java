@@ -1,3 +1,5 @@
+package blockchain;
+
 import java.util.Date;
 
 public class Block {
@@ -22,7 +24,7 @@ public class Block {
     public String calculateHash(){
         return StringUtil.applySha256(previousHash + timeStamp + nonce + data);
     }
-    
+
     /* public void mineBlock(int difficulty)
         - create new char array of size difficulty, which is turned into a string
         - This string is filled with 0's which must be solved for as proof of work
