@@ -2,7 +2,9 @@ package blockchain;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
-/* Takes String as user input, and converts into  SHA-256 hash */
+/* Takes String as input, and converts into  SHA-256 hash
+*   - Input: previousHash + timeStamp + nonce + data
+*/
 public class StringUtil {
     /* Applies SHA256 to a string and returns its result */
     public static String applySha256(String input){
