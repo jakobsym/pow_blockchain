@@ -37,6 +37,6 @@ public class Transaction {
     private String calcHash(){
         sequence++; // increment to avoid 2 transactions w/ same hash
 
-        return StringUtil.applySha256(StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(receiver) + Float.toString(amount) + sequence);
+        return StringUtil.applySha256(StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(amount) + sequence);
     }
 }
