@@ -39,4 +39,21 @@ public class Transaction {
 
         return StringUtil.applySha256(StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(amount) + sequence);
     }
+    // method that signs all data (bare minimum)
+    // I.E: We could also sign for output/input or time-stamp...
+    public void generateSignature(PrivateKey privateKey){
+        String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(amount);
+
+        signature = StringUtil.applyECDSASig(privateKey, data);
+    }
+
+    // verify data we signed hasnt been tampered
+
+    public boolean verifySignature(){
+        String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(amount);
+
+        return StringUtil.verifyECDSASig(sender, data, signature);
+    }
+
 }
+
