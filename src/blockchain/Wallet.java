@@ -19,7 +19,7 @@ public class Wallet {
             ECGenParameterSpec ecSpec = new ECGenParameterSpec("prime192v1");
 
             // generate keyPair after init of key generator
-            keyGen.initialize(ecSpec, random); //256 byte as security
+            keyGen.initialize(ecSpec, random); //256 byte as security ECDSA = 2^256 operations for attacker
             KeyPair keyPair = keyGen.generateKeyPair();
 
             // assign public/private generated keys

@@ -12,15 +12,31 @@ import java.util.ArrayList;
 * */
 
 public class Transaction {
+
     public String transactionId; // transaction hash
     public PublicKey sender;
-    public PublicKey receiver;
+    public PublicKey reciepient;
     public float amount;
     public byte[] signature; // unique signature for wallet
 
 
+    public ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
+    public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
 
+    // counter of num transactions
+    private static int sequence = 0;
 
+    // Constructors
+    public Transaction(PublicKey from, PublicKey to, float amount, ArrayList<TransactionInput> inputs){
+        this.sender = from;
+        this.reciepient = to;
+        this.amount = amount;
+        this.inputs = inputs;
+    }
 
+    private String calcHash(){
+        sequence++; // increment to avoid 2 transactions w/ same hash
 
+        return StringUtil.applySha256(StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(receiver) + Float.toString(amount) + sequence);
+    }
 }
