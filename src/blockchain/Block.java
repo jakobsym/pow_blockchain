@@ -29,8 +29,6 @@ public class Block {
         - create new char array of size difficulty, which is turned into a string
         - This string is filled with 0's which must be solved for as proof of work
         - I.E: difficulty = 5, target = '00000'
-        - Miner must
-
         - This method will trigger on e/a new block
         - This method will trigger when checking if Blocks are valid(solved)
     */
